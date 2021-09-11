@@ -1,7 +1,15 @@
 <?php
 require_once 'models/mdivisions.php';
 require_once 'models/musers.php';
-class Upuser extends Musers {
+/**
+ * [Description Upuser]
+ */
+class UpUser extends MUsers {
+    /**
+     * @param mixed $id=0
+     * 
+     * @return [type]
+     */
     function index($id=0) {
         
         $sqlDivisions = new mDivisions();
@@ -10,14 +18,21 @@ class Upuser extends Musers {
         $user = $user[0];
 
         require_once 'views/vupuser.php';
-    
-        if($_GET['email']){            
+        print_r($user)  ;
+        if($_GET['email']){ 
+                     
             $res =$this->UpUser($_GET['id'],$_GET);
             
-            // $this->Redirect('/users/', false);
+            $this->Redirect('/users/', false);
         }
     }
 
+        /**
+         * @param mixed $url
+         * @param bool $permanent
+         * 
+         * @return [type]
+         */
         function Redirect($url, $permanent = false)
     {
         if (headers_sent() === false)

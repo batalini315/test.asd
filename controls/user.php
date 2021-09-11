@@ -1,6 +1,13 @@
 <?php
 echo "user.php";
-function index( $num) {
-    echo("user number ". $num);
+/**
+ * @param mixed $num
+ * 
+ * @return [type]
+ */
+function index($num) {
+    if ($num == 0) {
+        echo 'not num';
+    }
 }
 ?>

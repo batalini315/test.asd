@@ -1,6 +1,6 @@
 <?php
 require_once 'system/sql.php';
-class mUsers extends Sql 
+class MUsers extends Sql 
 {
     public function getUsers()
     {
@@ -19,10 +19,10 @@ class mUsers extends Sql
         
             $stmt = $db->prepare("INSERT INTO users(email, name, address, phone, comment, division) VALUES (:email, :name, :address, :phone, :comment, :division)");
         
-            $stmt->bindParam(':email', $arrayData['email'], PDO::PARAM_STR, 100);
-            $stmt->bindParam(':name', $arrayData['name'], PDO::PARAM_STR, 100);
+            $stmt->bindParam(':email',  $arrayData['email'],    PDO::PARAM_STR, 100);
+            $stmt->bindParam(':name',   $arrayData['name'],     PDO::PARAM_STR, 100);
             $stmt->bindParam(':address', $arrayData['address'], PDO::PARAM_STR, 100);
-            $stmt->bindParam(':phone', $arrayData['phone'], PDO::PARAM_STR, 100);
+            $stmt->bindParam(':phone',  $arrayData['phone'],    PDO::PARAM_STR, 100);
             $stmt->bindParam(':comment', $arrayData['comment'], PDO::PARAM_STR, 100);
             $stmt->bindParam(':division', $arrayData['division'], PDO::PARAM_INT);
         

@@ -1,7 +1,15 @@
 <?php
 require_once 'models/mdivisions.php';
-class Updivision extends mDivisions 
+/**
+ * [Description Updivision]
+ */
+class UpDivision extends mDivisions 
 {
+    /**
+     * @param mixed $id
+     * 
+     * @return [type]
+     */
     function index($id) {        
         $division = $this->getItenForId($id, 'divisions'); 
         require_once 'views/vupdivision.php';

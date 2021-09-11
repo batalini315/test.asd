@@ -15,7 +15,7 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="/adduser">Новый сотрудник</a>
       <a class="nav-item nav-link" href="/divisions">Отделы</a>
-      <a class="nav-item nav-link" href="/adddivision">Новый отдел</a>
+      <a class="nav-item nav-link" href="/AddDivision">Новый отдел</a>
     </div>
   </div>
 </nav>

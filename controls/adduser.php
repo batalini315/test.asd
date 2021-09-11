@@ -1,6 +1,6 @@
 <?php 
 require_once 'models/musers.php';
-class Adduser extends Musers {
+class AddUser extends Musers {
     public function index($id=0)        
     {
         require_once 'models/mdivisions.php';

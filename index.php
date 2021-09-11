@@ -1,9 +1,11 @@
 <?php
 require_once 'views/header.php';
-$fulGet = $_GET['page'];
+$url = isset($_SERVER['PATH_INFO']) ? explode('/', ltrim($_SERVER['PATH_INFO'], '/')) : [];
+// print_r($url);
+// $fulGet = $_GET['page'];
 require_once 'system/router.php';
 $Router = new Router();
-$Router->index();
+$Router->Index($url);
 require_once 'views/footer.php';
 
 

@@ -1,6 +1,6 @@
 <?php 
 require_once 'models/mdivisions.php';
-class Adddivision extends mDivisions
+class AddDivision extends mDivisions
 {        
     function index($num=0) 
     {
@@ -17,7 +17,7 @@ class Adddivision extends mDivisions
                 $this->Redirect('/divisions/', false);
             }
         }
-        require_once 'views/vaddDivision.php';
+        require_once 'views/vAddDivision.php';
     }
 
         function Redirect($url, $permanent = false)

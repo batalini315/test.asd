@@ -1,16 +1,29 @@
 <?php
 class Router {
-    public function index()
-    {        
-        $fulGet=(!$p= $_GET) ?'users': $_GET['page'];
-        $nameFile =  stristr($fulGet, '/', true);
-        $method = stristr($fulGet, '/');
-        $method = substr($method, 1);
-
+    public function index($url = [])
+    {      
+        $routerArray = [
+            'users'         =>  'Users',
+            'adduser'       =>  'AddUser',
+            'upuser'        =>  'UpUser',
+            'deluser'       =>  'DelUser',
+            'divisions'     =>  'Divisions',
+            'adddivision'   =>  'AddDivision',
+            'updivision'    =>  'UpDivision',
+            'deldivision'   =>  'DelDivision'  
+        ]  ;
+        $nameFile=(!$p= $url[0]) ?$routerArray['users']: $routerArray[$url[0]];
+        
+        // $nameFile =  stristr($fulGet, '/', true);
+        // $nameFile =  $p;
+        // $method = stristr($fulGet, '/');
+        // $method = substr($method, 1);
+        $method = $url[1]??0;
+        echo '<br>'.$p.'<br>'.$nameFile;
         if($nameFile == '') {
-            $nameFile =  $fulGet; 
+            $nameFile =  $p; 
         };
-        $fn = ($_GET['page']) ? 'controls/' . $nameFile . '.php' : 'controls/users.php';
+        $fn = ($url[0]) ? 'controls/' . $nameFile . '.php' : 'controls/Users.php';
         if(file_exists($fn))  {
             require $fn;
             $nameClass = ucwords($nameFile);

@@ -4,7 +4,7 @@
         <h2>Новый отдел</h2>
         <div class="alert alert-warning"><?=$errorString?></div>
            
-<form action="adddivision" method="get">
+<form action="AddDivision" method="get">
     
   <label for="name">Название</label>
   <p><input type="text" name="name_division"></p>  

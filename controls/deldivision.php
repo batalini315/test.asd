@@ -1,6 +1,6 @@
 <?php
 require_once 'system/sql.php';
-class Deldivision extends Sql
+class DelDivision extends Sql
 {
     function index($id=0) {
         echo 'its id = '. $id;

@@ -1,6 +1,6 @@
 <?php
 require_once 'system/sql.php';
-class Deluser extends Sql
+class DelUser extends Sql
 {
     function index($id=0) {
         echo 'its id = '. $id;

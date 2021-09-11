@@ -1,7 +1,7 @@
 <?php
     require_once 'system/sql.php';
       
-    class mDivisions  extends Sql {
+    class MDivisions  extends Sql {
     function getDivisions() {
             $arr = $this->queryRows('SELECT * FROM divisions');
         return $arr;
