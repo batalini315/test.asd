@@ -10,7 +10,7 @@ class UpUser extends MUsers {
      * 
      * @return [type]
      */
-    function index($id=0) {
+    function Index($id=0) {
         
         $sqlDivisions = new mDivisions();
         $divisions = $sqlDivisions->getDivisions();
@@ -18,17 +18,16 @@ class UpUser extends MUsers {
         $user = $user[0];
 
         require_once 'views/vupuser.php';
-        print_r($user)  ;
-        if($_GET['email']){ 
-                     
-            $res =$this->UpUser($_GET['id'],$_GET);
-            
+        // print_r($user)  ;
+        if($_GET['email'])
+        {                      
+            $res =$this->UpUser($_GET['id'],$_GET);            
             $this->Redirect('/users/', false);
         }
     }
 
         /**
-         * @param mixed $url
+         * @param string $url
          * @param bool $permanent
          * 
          * @return [type]

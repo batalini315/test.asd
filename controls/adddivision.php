@@ -2,17 +2,16 @@
 require_once 'models/mdivisions.php';
 class AddDivision extends mDivisions
 {        
-    function index($num=0) 
+    function Index($num=0) 
     {
-            // require 'controls/404.php';
-            echo 'divisions number'. $num;
         
-
-        if($_GET['name_division']) {
+        if($_GET['name_division']) 
+        {
             if($this->IsDivision($_GET['name_division'])){
                 $errorString = "Duble error";
             }
-            else {
+            else 
+            {
                 $this->InsertDivision($_GET['name_division']);
                 $this->Redirect('/divisions/', false);
             }
@@ -26,7 +25,6 @@ class AddDivision extends mDivisions
             {
                 header('Location: ' . $url, true, ($permanent === true) ? 301 : 302);
             }
-
             exit();
         }
 

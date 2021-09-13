@@ -13,13 +13,7 @@ class Router {
             'deldivision'   =>  'DelDivision'  
         ]  ;
         $nameFile=(!$p= $url[0]) ?$routerArray['users']: $routerArray[$url[0]];
-        
-        // $nameFile =  stristr($fulGet, '/', true);
-        // $nameFile =  $p;
-        // $method = stristr($fulGet, '/');
-        // $method = substr($method, 1);
         $method = $url[1]??0;
-        echo '<br>'.$p.'<br>'.$nameFile;
         if($nameFile == '') {
             $nameFile =  $p; 
         };
